@@ -6,6 +6,10 @@ class PlaylistsController < ApplicationController
     @playlists = Playlist.all
   end
 
+
+  def index
+    @playlists = Playlist.order(params[:sort])
+  end
   # GET /playlists/1 or /playlists/1.json
   def show
   end

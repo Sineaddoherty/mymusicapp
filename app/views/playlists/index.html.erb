@@ -2,7 +2,29 @@
 
 <h1>Playlists</h1>
 
-<div id="playlists">
+<div id="Playlists">
+
+<table>
+<tr>
+<th><%= link_to "Song" , :sort => "Song"%> </th>
+<th><%= link_to "Singer" , :sort => "Singer"%> </th>
+<th><%= link_to "Album" , :sort => "Album"%> </th>
+<th><%= link_to "Year" , :sort => "Year"%> </th>
+
+</tr>
+
+<% @playlists.each do |playlist| %>
+  <tr>
+  <td><%=playlist.Song %></td><td>
+    <td><%= playlist.Singer%></td>              
+    <td><%=playlist.Album %></td>
+    <td><%=playlist.year %></td>
+    
+         
+  </tr>
+  <% end %>
+ </table>
+
   <% @playlists.each do |playlist| %>
     <%= render playlist %>
     <p>
@@ -11,7 +33,7 @@
   <% end %>
 </div>
 
-<%= link_to "New playlist", new_playlist_path %>
+<%= link_to "Add a song to playlist", new_playlist_path %>
 <div class="p-3 mb-2 bg-light text-dark">
     <span class="text-info font-weight-bold">Welcome to Playlist! fill in your favorite songs
   </div>
