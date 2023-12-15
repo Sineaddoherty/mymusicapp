@@ -11,8 +11,8 @@ class PlaylistsTest < ApplicationSystemTestCase
   end
 
   test "should create playlist" do
-    visit playlists_url
-    click_on "New playlist"
+    visit playlists_url(@playlist)
+    click_on "Add a song to playlist", match: :first
 
     fill_in "Album", with: @playlist.Album
     fill_in "Singer", with: @playlist.Singer

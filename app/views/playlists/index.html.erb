@@ -6,20 +6,22 @@
 
 <table>
 <tr>
-<th><%= link_to "Song" , :sort => "Song"%> </th>
-<th><%= link_to "Singer" , :sort => "Singer"%> </th>
-<th><%= link_to "Album" , :sort => "Album"%> </th>
-<th><%= link_to "Year" , :sort => "Year"%> </th>
+<th class="text-center" ><%= link_to "Song" , :sort => "Song"%> </th><th>
+<th class="text-center" ><%= link_to "Singer" , :sort => "Singer"%> </th> <th>
+<th class="text-center" ><%= link_to "Album" , :sort => "Album"%> </th> <th>
+<th class="text-center" ><%= link_to "Year" , :sort => "Year"%> </th> <th>
 
 </tr>
 
 <% @playlists.each do |playlist| %>
   <tr>
-  <td><%=playlist.Song %></td><td>
-    <td><%= playlist.Singer%></td>              
-    <td><%=playlist.Album %></td>
-    <td><%=playlist.year %></td>
-    
+  <td class="text-center" ><%=playlist.Song %></td><td>
+    <td class="text-center" ><%= playlist.Singer%></td> <td>             
+    <td class="text-center" ><%=playlist.Album %></td> <td>
+    <td class="text-center" ><%=playlist.year %></td> <td>
+    <td class="text-center"><%= button_to "Show",playlist_path(playlist),method: :get, class:"btn-success border-0 rounded-pill shadow px-2 py-2" %></td>
+    <td class="text-center"><%= button_to "Edit",edit_playlist_path(playlist),method: :get, class:"btn-primary border-0 rounded-pill shadow px-2 py-2" %></td>
+   <td class="text-center"><%= button_to "Delete",playlist_path(playlist),method: :delete, class:"btn-danger border-0 rounded-pill shadow px-2 py-2" %></td>
          
   </tr>
   <% end %>
@@ -35,9 +37,9 @@
 
 <%= link_to "Add a song to playlist", new_playlist_path %>
 <div class="p-3 mb-2 bg-light text-dark">
-    <span class="text-info font-weight-bold">Welcome to Playlist! fill in your favorite songs
+    <span class="btn-info border-0 rounded-pill shadow p-2 m-2">Welcome to Playlist! fill in your favorite songs
   </div>
 </div>
 
-
+  
 
