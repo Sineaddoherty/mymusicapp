@@ -20,7 +20,7 @@
     <td class="text-center" ><%=playlist.Album %></td> <td>
     <td class="text-center" ><%=playlist.year %></td> <td>
     <td class="text-center"><%= button_to "Show",playlist_path(playlist),method: :get, class:"btn-success border-0 rounded-pill shadow px-2 py-2" %></td>
-    <td class="text-center"><%= button_to "Edit",edit_playlist_path(playlist),method: :get, class:"btn-primary border-0 rounded-pill shadow px-2 py-2" %></td>
+    <td class="text-center"><%= button_to "Edit",edit_playlist_path(playlist),method: :get, class:"btn-success border-0 rounded-pill shadow px-2 py-2" %></td>
    <td class="text-center"><%= button_to "Delete",playlist_path(playlist),method: :delete, class:"btn-danger border-0 rounded-pill shadow px-2 py-2" %></td>
          
   </tr>
